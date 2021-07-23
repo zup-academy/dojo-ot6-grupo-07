@@ -1,6 +1,7 @@
 package br.com.zupedu.dojo.ot4dojo.entities;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import java.time.LocalDate;
 
 @Entity
@@ -11,18 +12,18 @@ public class Turma {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String nome;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private LocalDate dataInicio;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private LocalDate dataFim;
 
     public Turma() {}
 
-    public Turma(String nome, LocalDate dataInicio, LocalDate dataFim) {
+    public Turma(@Valid String nome, LocalDate dataInicio, LocalDate dataFim) {
         this.nome = nome;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
