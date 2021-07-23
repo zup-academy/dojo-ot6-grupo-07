@@ -15,10 +15,8 @@ public class TurmaRequest {
     @Size(max = 50)
     private String nome;
 
-    @FutureOrPresent
     private LocalDate dataInicio;
-    
-    @Future
+
     private LocalDate dataFim;
 
     public TurmaRequest() {}
@@ -28,7 +26,6 @@ public class TurmaRequest {
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
     }
-
 
     public String getNome() {
         return nome;

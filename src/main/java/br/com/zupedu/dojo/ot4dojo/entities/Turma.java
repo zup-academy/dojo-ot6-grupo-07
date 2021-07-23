@@ -35,4 +35,8 @@ public class Turma {
         this.dataInicio = turmaRequest.getDataInicio();
         this.dataFim = turmaRequest.getDataFim();
     }
+
+    public Long getId() {
+        return id;
+    }
 }
