@@ -1,8 +1,15 @@
 package br.com.zupedu.dojo.ot4dojo.entities;
 
-import javax.persistence.*;
-import javax.validation.Valid;
 import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import br.com.zupedu.dojo.ot4dojo.dto.TurmaRequest;
 
 @Entity
 @Table(name = "tb_turma")
@@ -23,9 +30,9 @@ public class Turma {
 
     public Turma() {}
 
-    public Turma(@Valid String nome, LocalDate dataInicio, LocalDate dataFim) {
-        this.nome = nome;
-        this.dataInicio = dataInicio;
-        this.dataFim = dataFim;
+    public Turma(TurmaRequest turmaRequest) {
+        this.nome = turmaRequest.getNome();
+        this.dataInicio = turmaRequest.getDataInicio();
+        this.dataFim = turmaRequest.getDataFim();
     }
 }
